@@ -675,12 +675,12 @@ export class ProjectResolver {
     if (newProjectData.title) {
       await validateProjectTitleForEdit(newProjectData.title, projectId);
     }
-    if (newProjectData.walletAddress) {
-      await validateProjectWalletAddress(
-        newProjectData.walletAddress,
-        projectId,
-      );
-    }
+    // if (newProjectData.walletAddress) {
+    //   await validateProjectWalletAddress(
+    //     newProjectData.walletAddress,
+    //     projectId,
+    //   );
+    // }
 
     const slugBase = slugify(newProjectData.title);
     const newSlug = await getAppropriateSlug(slugBase, projectId);
@@ -783,7 +783,7 @@ export class ProjectResolver {
         errorMessages.CATEGORIES_LENGTH_SHOULD_NOT_BE_MORE_THAN_FIVE,
       );
     }
-    await validateProjectWalletAddress(projectInput.walletAddress);
+    // await validateProjectWalletAddress(projectInput.walletAddress);
     await validateProjectTitle(projectInput.title);
     const slugBase = slugify(projectInput.title);
     const slug = await getAppropriateSlug(slugBase);
