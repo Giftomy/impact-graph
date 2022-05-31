@@ -46,21 +46,23 @@ export async function seedDatabase() {
    */
 
   const categorySeeds = categoryRepository.create([
+    { name: 'software', value: 'Software', source: 'adhoc' },
     { name: 'community', value: 'Community', source: 'adhoc' },
+    { name: 'education', value: 'Education', source: 'IRIS' },
+    { name: 'research', value: 'Research', source: 'adhoc' },
+    { name: 'art-culture', value: 'Art & Culture', source: 'adhoc' },
+    { name: 'other', value: 'Other', source: 'adhoc' },
     { name: 'food', value: 'Food', source: 'adhoc' },
     { name: 'non-profit', value: 'Non-profit', source: 'adhoc' },
     { name: 'housing', value: 'Housing', source: 'adhoc' },
     { name: 'technology', value: 'Technology', source: 'adhoc' },
-    { name: 'research', value: 'Research', source: 'adhoc' },
     { name: 'nutrition', value: 'Nutrition', source: 'adhoc' },
-    { name: 'art-culture', value: 'Art & Culture', source: 'adhoc' },
 
     { name: 'agriculture', value: 'Agriculture', source: 'IRIS' },
     { name: 'air', value: 'Air', source: 'IRIS' },
     { name: 'biodiversity', value: 'Biodiversity', source: 'IRIS' },
     { name: 'climate', value: 'Climate', source: 'IRIS' },
     { name: 'inclusion', value: 'Inclusion', source: 'IRIS' },
-    { name: 'education', value: 'Education', source: 'IRIS' },
     { name: 'employment', value: 'Employment', source: 'IRIS' },
     { name: 'energy', value: 'Energy', source: 'IRIS' },
     { name: 'finance', value: 'Finance', source: 'IRIS' },
@@ -72,7 +74,6 @@ export async function seedDatabase() {
     { name: 'real-estate', value: 'Real Estate', source: 'IRIS' },
     { name: 'waste', value: 'Waste', source: 'IRIS' },
     { name: 'water', value: 'Water', source: 'IRIS' },
-    { name: 'other', value: 'Other', source: 'adhoc' },
   ]);
 
   await categoryRepository.save(categorySeeds);

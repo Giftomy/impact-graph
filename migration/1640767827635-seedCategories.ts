@@ -7,8 +7,9 @@ export class seedCategories1640767827635 implements MigrationInterface {
       return;
     }
 
-    await queryRunner.query(`INSERT INTO public.category (name, value, source) VALUES 
+    await queryRunner.query(`INSERT INTO public.category (name, value, source) VALUES
                     ('community','Community','adhoc'),
+                    ('software','Software','adhoc'),
                     ('food','Food','adhoc'),
                     ('non-profit','Non-profit','adhoc'),
                     ('housing','Housing','adhoc'),
@@ -33,8 +34,7 @@ export class seedCategories1640767827635 implements MigrationInterface {
                     ('real-estate','Real State','adhoc'),
                     ('waste','Waste','adhoc'),
                     ('water','Water','adhoc'),
-                    ('other','Other','adhoc'),
-                    ('the-giving-block','The Giving block','adhoc')
+                    ('other','Other','adhoc')
                     ;`);
   }
 

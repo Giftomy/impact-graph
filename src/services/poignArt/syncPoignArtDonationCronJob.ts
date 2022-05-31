@@ -25,9 +25,9 @@ const poignArtOriginAddress = config.get('POIGN_ART_ORIGIN_ADDRESS') as string;
 
 export const runSyncPoignArtDonations = () => {
   logger.debug('runSyncPoignArtDonations() has been called');
-  schedule(cronJobTime, async () => {
-    await importPoignArtDonations();
-  });
+  // schedule(cronJobTime, async () => {
+  //   await importPoignArtDonations();
+  // });
 };
 
 const importPoignArtDonations = async () => {
