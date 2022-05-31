@@ -1,6 +1,6 @@
-# Impact Graph
+# Giftomy Backend
 
-ImpactQL is a GraphQL server, that enables rapid development of serverless impact project applications. It does this by taking care of the persistance of impact project data.
+A GraphQL server for managing Giftomy's project info.
 
 [Installation](#installation)
 [Features](#features)
@@ -11,7 +11,7 @@ ImpactQL is a GraphQL server, that enables rapid development of serverless impac
 ## Installation
 
 ```
-git clone git@github.com:topiahq/impact-graph.git
+git clone git@github.com:LoopDAO/giftomy-backend.git
 cd impact-graph
 // You should have installed chromium on your system, it can be installed by your or package maneger (apt,brew, ..)
 npm i
@@ -202,10 +202,10 @@ mutation LoginWallet {
 ### Admin panel
 We use [Admin Bro](https://github.com/SoftwareBrothers/adminjs) for Admin dashboard
 You should navigate to `/admin` for browsing admin panel.
-in your local database you can hash a desired password with `BCRYPT_SALT` that is in your `config/development.env` with 
+in your local database you can hash a desired password with `BCRYPT_SALT` that is in your `config/development.env` with
 [bcrypt](https://github.com/kelektiv/node.bcrypt.js) then you set that value in `encryptedPassword` of your user in DB and
 change `role` of user to `admin` in db
-Now you can login in admin dashboard with your user's `email` and the `password` you already set 
+Now you can login in admin dashboard with your user's `email` and the `password` you already set
 
 **PS**:
 A simple script for create encryptedPassword
@@ -262,7 +262,7 @@ npm run typeorm:cli -- migration:revert
 ### TEST
 For running tests you need to register infura and etherscan api-key, and you should pass this environment variables
 
-`PINATA_API_KEY=0000000000000 PINATA_SECRET_API_KEY=00000000000000000000000000000000000000000000000000000000  ETHERSCAN_API_KEY=0000000000000000000000000000000000 XDAI_NODE_HTTP_URL=https://xxxxxx.xdai.quiknode.pro INFURA_API_KEY=0000000000000000000000000000000000 ETHEREUM_NODE_ID=INFURA_API_KEY npm run test` 
+`PINATA_API_KEY=0000000000000 PINATA_SECRET_API_KEY=00000000000000000000000000000000000000000000000000000000  ETHERSCAN_API_KEY=0000000000000000000000000000000000 XDAI_NODE_HTTP_URL=https://xxxxxx.xdai.quiknode.pro INFURA_API_KEY=0000000000000000000000000000000000 ETHEREUM_NODE_ID=INFURA_API_KEY npm run test`
 
 ### PRE_COMMITS
 Please before committing your changes run
@@ -270,22 +270,7 @@ Please before committing your changes run
 
 You will need to add the above command to your build process so that all database migrations are run upon deployments.
 
-### Statuses 
-You can generate table with this site
-https://www.tablesgenerator.com/markdown_tables
-
-| id | symbol        | name          | description                                                                          | Who can change to       |
-|----|---------------|---------------|--------------------------------------------------------------------------------------|-------------------------|
-| 1  | rejected      | rejected      | his project has been rejected by Giveth or platform owner, We dont use it now        |                         |
-| 2  | pending       | pending       | This project is created, but pending approval, We dont use it now                    |                         |
-| 3  | clarification | clarification | Clarification requested by Giveth or platform owner, We dont use it now              |                         |
-| 4  | verification  | verification  | Verification in progress (including KYC or otherwise), We dont use it now            |                         |
-| 5  | activated     | activated     | This is an active project                                                            | project owner and admin |
-| 6  | deactivated   | deactivated   | Deactivated with user or Giveth Admin                                                | project owner and admin |
-| 7  | cancelled     | cancelled     | Cancelled by Giveth Admin                                                            | admin                   |
-| 8  | drafted       | drafted       | This project is created as a draft for a potential new project, but can be discarded | project owner           |
-
-**PS** 
+**PS**
 * If a project is **cancelled** just admin can activate that
 * If project is **deactive** both admins and project owner can activate it
 * Both admins and project owner can deactivate an **active** project
