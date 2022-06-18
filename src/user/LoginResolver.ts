@@ -198,7 +198,7 @@ export class LoginResolver {
         User: [{ name: 'wallets', type: 'address[]' }],
       },
       domain: {
-        name: 'Giveth Login',
+        name: 'Giftomy Login',
         chainId: networkId,
         version: '1',
       },
