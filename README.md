@@ -11,7 +11,7 @@ A GraphQL server for managing Giftomy's project info.
 ## Installation
 
 ```
-git clone git@github.com:LoopDAO/giftomy-backend.git
+git clone git@github.com:LoopDAO/impact-graph.git
 cd impact-graph
 // You should have installed chromium on your system, it can be installed by your or package maneger (apt,brew, ..)
 npm i
