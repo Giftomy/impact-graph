@@ -7,9 +7,9 @@ export class relateExistinTokensToOrganizations1646307744677
 {
   async up(queryRunner: QueryRunner): Promise<void> {
     const tokens = await queryRunner.query(`SELECT * FROM token`);
-    const givethOrganization = (
+    const giftomyOrganization = (
       await queryRunner.query(`SELECT * FROM organization
-        WHERE label='giveth'`)
+        WHERE label='giftomy'`)
     )[0];
     const traceOrganization = (
       await queryRunner.query(`SELECT * FROM organization
@@ -23,7 +23,7 @@ export class relateExistinTokensToOrganizations1646307744677
 
     for (const token of tokens) {
       await queryRunner.query(`INSERT INTO organization_tokens_token ("tokenId","organizationId") VALUES
-        (${token.id}, ${givethOrganization.id}),
+        (${token.id}, ${giftomyOrganization.id}),
         (${token.id}, ${traceOrganization.id})
       ;`);
     }

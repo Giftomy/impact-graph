@@ -92,9 +92,9 @@ export async function seedDatabase() {
   const projects: Project[] = [];
   let organisations: Organisation[] = [];
 
-  if (config.get('DEFAULT_ORGANISATION') === 'giveth') {
+  if (config.get('DEFAULT_ORGANISATION') === 'giftomy') {
     const givethAdmin = userRepository.create({
-      email: 'james@giveth.io',
+      email: 'james@giftomy.xyz',
       firstName: 'admin',
       password: bcrypt.hashSync(seedPassword, 12),
       confirmed: true,
@@ -105,13 +105,13 @@ export async function seedDatabase() {
     await userRepository.save(users);
     const project1 = projectRepository.create({
       title: 'Giveth - Support the future of giving',
-      description: `Join us in building the future of giving!\n\nIn addition to maintaining beta.giveth.io, we’re actively developing v2.giveth.io, the free, open-source, and decentralized application for peer-to-peer donations. Donations such as yours are our primary source of funding and are deeply appreciated! 💜\n\nProgress 🚀\n\n - Giveth now has 501c3 status!\n - The beta version of Giveth is live at beta.giveth.io with free donations for projects!\n - We’re building the next evolution of Giveth at v2.giveth.io and making incredible progress. Take it for a test drive and let us know what you think!\n - We are Hiring! We are looking for experienced devs and project managers to join the team!\n\nIn the next evolution of Giveth, we're building upon firsthand experience over the past 3+ years with the Giveth Dapp. The V2 is starting out with a simple purpose:\n\nEnable projects anywhere in the world to start accepting donations in a few minutes, with zero fees and zero censorship.\n\nOffer the best experience for anyone looking to donate to a cause, whether with crypto or a credit card.\n\nCheck out the in-progress v2, and please donate to help make this dream a reality!`,
+      description: `Join us in building the future of giving!\n\nIn addition to maintaining beta.giftomy.xyz, we’re actively developing v2.giftomy.xyz, the free, open-source, and decentralized application for peer-to-peer donations. Donations such as yours are our primary source of funding and are deeply appreciated! 💜\n\nProgress 🚀\n\n - Giveth now has 501c3 status!\n - The beta version of Giveth is live at beta.giftomy.xyz with free donations for projects!\n - We’re building the next evolution of Giveth at v2.giftomy.xyz and making incredible progress. Take it for a test drive and let us know what you think!\n - We are Hiring! We are looking for experienced devs and project managers to join the team!\n\nIn the next evolution of Giveth, we're building upon firsthand experience over the past 3+ years with the Giveth Dapp. The V2 is starting out with a simple purpose:\n\nEnable projects anywhere in the world to start accepting donations in a few minutes, with zero fees and zero censorship.\n\nOffer the best experience for anyone looking to donate to a cause, whether with crypto or a credit card.\n\nCheck out the in-progress v2, and please donate to help make this dream a reality!`,
       organisationId: 1,
       giveBacks: true,
       verified: true,
-      admin: 'giveth',
+      admin: 'giftomy',
       walletAddress: '0x8f951903C9360345B4e1b536c7F5ae8f88A64e79',
-      slug: 'giveth',
+      slug: 'giftomy',
       image: projectBg,
       creationDate: '2016-01-01T00:00:00-05:00',
     });

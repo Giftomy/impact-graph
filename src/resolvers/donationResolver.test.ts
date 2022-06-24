@@ -250,7 +250,7 @@ function donationsTestCases() {
 }
 
 function saveDonationTestCases() {
-  it('should save GIV donation for giveth project on xdai successfully', async () => {
+  it('should save GIV donation for giftomy project on xdai successfully', async () => {
     const project = await saveProjectDirectlyToDb(createProjectData());
     const user = await User.create({
       walletAddress: generateRandomEtheriumAddress(),
@@ -285,7 +285,7 @@ function saveDonationTestCases() {
     );
     assert.isTrue(donation?.isTokenEligibleForGivback);
   });
-  it('should save GIV donation for giveth project on mainnet successfully', async () => {
+  it('should save GIV donation for giftomy project on mainnet successfully', async () => {
     const project = await saveProjectDirectlyToDb(createProjectData());
     const user = await User.create({
       walletAddress: generateRandomEtheriumAddress(),
@@ -320,7 +320,7 @@ function saveDonationTestCases() {
     );
     assert.isTrue(donation?.isTokenEligibleForGivback);
   });
-  it('should save custom token donation for giveth project on mainnet successfully', async () => {
+  it('should save custom token donation for giftomy project on mainnet successfully', async () => {
     const project = await saveProjectDirectlyToDb(createProjectData());
     const user = await User.create({
       walletAddress: generateRandomEtheriumAddress(),
@@ -398,7 +398,7 @@ function saveDonationTestCases() {
   it('should save DOGE donation for projects in mainnet as nonEligible', async () => {
     const project = await saveProjectDirectlyToDb({
       ...createProjectData(),
-      organizationLabel: ORGANIZATION_LABELS.GIVETH,
+      organizationLabel: ORGANIZATION_LABELS.giftomy,
     });
     const user = await User.findOne({ id: SEED_DATA.ADMIN_USER.id });
     const accessToken = await generateTestAccessToken(user!.id);
@@ -411,13 +411,13 @@ function saveDonationTestCases() {
       networkId: 1,
     });
     await token.save();
-    const givethOrganization = (await Organization.findOne({
-      label: ORGANIZATION_LABELS.GIVETH,
+    const giftomyOrganization = (await Organization.findOne({
+      label: ORGANIZATION_LABELS.giftomy,
     })) as Organization;
 
     await Token.query(
       `INSERT INTO organization_tokens_token ("tokenId","organizationId") VALUES
-        (${token.id}, ${givethOrganization.id})
+        (${token.id}, ${giftomyOrganization.id})
       ;`,
     );
     const saveDonationResponse = await axios.post(
@@ -1380,7 +1380,7 @@ function saveDonationTestCases() {
 }
 
 function createDonationTestCases() {
-  it('should create GIV donation for giveth project on xdai successfully', async () => {
+  it('should create GIV donation for giftomy project on xdai successfully', async () => {
     const project = await saveProjectDirectlyToDb(createProjectData());
     const user = await User.create({
       walletAddress: generateRandomEtheriumAddress(),
@@ -1413,7 +1413,7 @@ function createDonationTestCases() {
     );
     assert.isTrue(donation?.isTokenEligibleForGivback);
   });
-  it('should create GIV donation for giveth project on mainnet successfully', async () => {
+  it('should create GIV donation for giftomy project on mainnet successfully', async () => {
     const project = await saveProjectDirectlyToDb(createProjectData());
     const user = await User.create({
       walletAddress: generateRandomEtheriumAddress(),
@@ -1450,7 +1450,7 @@ function createDonationTestCases() {
     assert.isFalse(donation?.segmentNotified);
     assert.equal(donation?.status, DONATION_STATUS.PENDING);
   });
-  it('should create custom token donation for giveth project on mainnet successfully', async () => {
+  it('should create custom token donation for giftomy project on mainnet successfully', async () => {
     const project = await saveProjectDirectlyToDb(createProjectData());
     const user = await User.create({
       walletAddress: generateRandomEtheriumAddress(),
@@ -1522,7 +1522,7 @@ function createDonationTestCases() {
   it('should create Not Eligible donation donation for projects in mainnet as nonEligible', async () => {
     const project = await saveProjectDirectlyToDb({
       ...createProjectData(),
-      organizationLabel: ORGANIZATION_LABELS.GIVETH,
+      organizationLabel: ORGANIZATION_LABELS.giftomy,
     });
     const user = await User.findOne({ id: SEED_DATA.ADMIN_USER.id });
     const accessToken = await generateTestAccessToken(user!.id);
@@ -1535,13 +1535,13 @@ function createDonationTestCases() {
       networkId: 1,
     });
     await token.save();
-    const givethOrganization = (await Organization.findOne({
-      label: ORGANIZATION_LABELS.GIVETH,
+    const giftomyOrganization = (await Organization.findOne({
+      label: ORGANIZATION_LABELS.giftomy,
     })) as Organization;
 
     await Token.query(
       `INSERT INTO organization_tokens_token ("tokenId","organizationId") VALUES
-        (${token.id}, ${givethOrganization.id})
+        (${token.id}, ${giftomyOrganization.id})
       ;`,
     );
     const saveDonationResponse = await axios.post(

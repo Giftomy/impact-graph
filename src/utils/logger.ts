@@ -33,7 +33,7 @@ function createBunyanLogger() {
     });
   }
   return createLogger({
-    name: 'giveth-impact-graph',
+    name: 'giftomy-impact-graph',
     level: levelFromName[process.env.LOG_LEVEL] || DEBUG,
     // level :process.env.LOG_LEVEL | 'error',
     streams: bunyanStreams,

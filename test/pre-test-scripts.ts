@@ -97,8 +97,8 @@ async function seedOrganizations() {
 
 async function relateOrganizationsToTokens() {
   const tokens = await Token.createQueryBuilder('token').getMany();
-  const giveth = (await Organization.findOne({
-    label: ORGANIZATION_LABELS.GIVETH,
+  const giftomy = (await Organization.findOne({
+    label: ORGANIZATION_LABELS.GIFTOMY,
   })) as Organization;
   const trace = (await Organization.findOne({
     label: ORGANIZATION_LABELS.TRACE,
@@ -109,8 +109,8 @@ async function relateOrganizationsToTokens() {
   const change = (await Organization.findOne({
     label: ORGANIZATION_LABELS.CHANGE,
   })) as Organization;
-  giveth.tokens = tokens;
-  await giveth.save();
+  giftomy.tokens = tokens;
+  await giftomy.save();
   trace.tokens = tokens;
   await trace.save();
   const etherMainnetToken = (await Token.findOne({

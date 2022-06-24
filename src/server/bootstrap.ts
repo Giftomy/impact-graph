@@ -163,7 +163,7 @@ export async function bootstrap() {
           .split(':')[0];
 
         for (const allowedOrigin of whitelistHostnames) {
-          // passing all subdomains of whitelist hosts, for instance x.vercel.app, x.giveth.io,...
+          // passing all subdomains of whitelist hosts, for instance x.vercel.app, x.giftomy.io,...
           if (
             formattedOrigin === allowedOrigin ||
             formattedOrigin.endsWith(`.${allowedOrigin}`)

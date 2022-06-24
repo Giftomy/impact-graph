@@ -338,13 +338,13 @@ export const SEED_DATA = {
     {
       name: 'Giveth',
       label: ORGANIZATION_LABELS.GIVETH,
-      website: 'https://giveth.io',
+      website: 'https://giftomy.xyz',
       supportCustomTokens: true,
     },
     {
       name: 'Trace',
       label: ORGANIZATION_LABELS.TRACE,
-      website: 'https://trace.giveth.io',
+      website: 'https://trace.giftomy.xyz',
       supportCustomTokens: true,
     },
     {

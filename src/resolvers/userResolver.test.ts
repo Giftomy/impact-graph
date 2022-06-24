@@ -23,7 +23,7 @@ function userTestCases() {
     const userData = {
       firstName: 'firstName',
       lastName: 'lastName',
-      email: `${new Date().getTime()}-giveth@gievth.com`,
+      email: `${new Date().getTime()}-giftomy@gievth.com`,
       avatar: 'pinata address',
       url: 'website url',
       loginType: 'wallet',
@@ -58,7 +58,7 @@ function userByAddressTestCases() {
     const userData = {
       firstName: 'firstName',
       lastName: 'lastName',
-      email: 'giveth@gievth.com',
+      email: 'giftomy@gievth.com',
       avatar: 'pinata address',
       url: 'website url',
       loginType: 'wallet',
@@ -99,7 +99,7 @@ function updateUserTestCases() {
     const updateUserData = {
       firstName: 'firstName',
       lastName: 'lastName',
-      email: 'giveth@gievth.com',
+      email: 'giftomy@gievth.com',
       avatar: 'pinata address',
       url: 'website url',
     };
@@ -135,7 +135,7 @@ function updateUserTestCases() {
     const updateUserData = {
       firstName: 'firstName',
       lastName: 'lastName',
-      email: 'giveth@gievth.com',
+      email: 'giftomy@gievth.com',
       avatar: 'pinata address',
       url: 'website url',
     };
@@ -197,7 +197,7 @@ function updateUserTestCases() {
     const user = await saveUserDirectlyToDb(generateRandomEtheriumAddress());
     const accessToken = await generateTestAccessToken(user.id);
     const updateUserData = {
-      email: 'giveth@gievth.com',
+      email: 'giftomy@gievth.com',
       avatar: 'pinata address',
       url: 'website url',
     };
@@ -224,7 +224,7 @@ function updateUserTestCases() {
     const accessToken = await generateTestAccessToken(user.id);
     const updateUserData = {
       firstName: 'firstName',
-      email: 'giveth',
+      email: 'giftomy',
       avatar: 'pinata address',
       url: 'website url',
     };
@@ -248,7 +248,7 @@ function updateUserTestCases() {
     const accessToken = await generateTestAccessToken(user.id);
     const updateUserData = {
       firstName: 'firstName',
-      email: 'giveth @ giveth.com',
+      email: 'giftomy @ giftomy.com',
       avatar: 'pinata address',
       url: 'website url',
     };
@@ -273,7 +273,7 @@ function updateUserTestCases() {
     const updateUserData = {
       firstName: '',
       lastName: 'test lastName',
-      email: 'giveth @ giveth.com',
+      email: 'giftomy @ giftomy.com',
       avatar: 'pinata address',
       url: 'website url',
     };
@@ -301,7 +301,7 @@ function updateUserTestCases() {
     const updateUserData = {
       lastName: '',
       firstName: 'firstName',
-      email: 'giveth @ giveth.com',
+      email: 'giftomy @ giftomy.com',
       avatar: 'pinata address',
       url: 'website url',
     };
@@ -332,7 +332,7 @@ function updateUserTestCases() {
     await user.save();
     const accessToken = await generateTestAccessToken(user.id);
     const updateUserData = {
-      email: 'giveth@gievth.com',
+      email: 'giftomy@gievth.com',
       avatar: 'pinata address',
       url: 'website url',
       lastName: new Date().getTime().toString(),
@@ -369,7 +369,7 @@ function updateUserTestCases() {
     await user.save();
     const accessToken = await generateTestAccessToken(user.id);
     const updateUserData = {
-      email: 'giveth@gievth.com',
+      email: 'giftomy@gievth.com',
       avatar: 'pinata address',
       url: 'website url',
       firstName: new Date().getTime().toString(),

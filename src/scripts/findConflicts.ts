@@ -174,7 +174,7 @@ async function getTokenTransfers(input: {
             10 ** Number(item.transaction.tokenDecimal),
           givPrice: prices.givPriceInUsd,
           ethPrice: prices.ethPriceInUsd,
-          projectLink: `https://giveth.io/project/${project.slug}`,
+          projectLink: `https://giftomy.xyz/project/${project.slug}`,
         });
       }
     }

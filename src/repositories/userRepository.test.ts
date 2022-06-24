@@ -9,7 +9,7 @@ import { assert } from 'chai';
 
 describe('sql injection test cases', () => {
   it('should not find user when sending SQL query instead of email (test to be safe on SQL injection)', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
     await User.create({
       email,
       role: UserRole.OPERATOR,
@@ -24,7 +24,7 @@ describe('sql injection test cases', () => {
   });
 
   it('should not find user when sending SQL query instead of walletAddress (test to be safe on SQL injection)', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
     const walletAddress = generateRandomEtheriumAddress();
     await User.create({
       email,
@@ -41,7 +41,7 @@ describe('sql injection test cases', () => {
 
 describe('findAdminUserByEmail test cases', () => {
   it('should Find admin user by email', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
     const user = await User.create({
       email,
       role: UserRole.ADMIN,
@@ -54,7 +54,7 @@ describe('findAdminUserByEmail test cases', () => {
   });
 
   it('should Find operator user by email', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
     const user = await User.create({
       email,
       role: UserRole.OPERATOR,
@@ -67,13 +67,13 @@ describe('findAdminUserByEmail test cases', () => {
   });
 
   it('should not find operator/admin user when doesnt exists', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
     const foundUser = await findAdminUserByEmail(email);
     assert.isUndefined(foundUser);
   });
 
   it('should find admin user when there is two user with similar email and restricted one created first', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
     await User.create({
       email,
       role: UserRole.RESTRICTED,
@@ -93,7 +93,7 @@ describe('findAdminUserByEmail test cases', () => {
     assert.equal(foundUser?.id, adminUser.id);
   });
   it('should find admin user when there is two user with similar email and admin one created first', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
 
     const adminUser = await User.create({
       email,
@@ -114,7 +114,7 @@ describe('findAdminUserByEmail test cases', () => {
   });
 
   it('should find operator user when there is two user with similar email and restricted one created first', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
     await User.create({
       email,
       role: UserRole.RESTRICTED,
@@ -135,7 +135,7 @@ describe('findAdminUserByEmail test cases', () => {
   });
 
   it('should find operator user when there is two user with similar email and operator one created first', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
 
     const adminUser = await User.create({
       email,
@@ -159,7 +159,7 @@ describe('findAdminUserByEmail test cases', () => {
 
 describe('findUserByWalletAddress test cases', () => {
   it('Should find user by walletAddress', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
     const user = await User.create({
       email,
       loginType: 'wallet',
@@ -173,7 +173,7 @@ describe('findUserByWalletAddress test cases', () => {
   });
 
   it('Should find user by uppercase walletAddress', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
     const user = await User.create({
       email,
       loginType: 'wallet',
@@ -196,7 +196,7 @@ describe('findUserByWalletAddress test cases', () => {
 
 describe('findUserById test cases', () => {
   it('Should find user by id', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
     const user = await User.create({
       email,
       loginType: 'wallet',

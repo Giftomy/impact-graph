@@ -1,7 +1,7 @@
 {
-  "name": "giveth-graphql-api",
+  "name": "giftomy-graphql-api",
   "version": "1.2.3",
-  "description": "Backend GraphQL server for Giveth originally forked from Topia",
+  "description": "Backend GraphQL server for giftomy originally forked from giveth",
   "main": "./dist/index.js",
   "dependencies": {
     "@admin-bro/express": "3.1.0",

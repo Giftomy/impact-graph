@@ -32,13 +32,14 @@ const cronJobTime =
 const adminId =
   (config.get('THIRD_PARTY_PROJECTS_ADMIN_USER_ID') as string) || '1';
 
+// todo
 export const runGivingBlocksProjectSynchronization = () => {
   logger.debug('runGivingBlocksProjectSynchronization() has been called');
   schedule(cronJobTime, async () => {
     await exportGivingBlocksProjects();
   });
 };
-
+// todo
 const exportGivingBlocksProjects = async () => {
   const authResponse = await loginGivingBlocks();
   const accessToken = authResponse.accessToken;

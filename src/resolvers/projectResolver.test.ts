@@ -104,7 +104,7 @@ describe(
 // describe('activateProject test cases --->', activateProjectTestCases);
 
 function getProjectsAcceptTokensTestCases() {
-  it('should return all tokens for giveth projects', async () => {
+  it('should return all tokens for giftomy projects', async () => {
     const project = await saveProjectDirectlyToDb(createProjectData());
     const allTokens = await Token.find({});
     const result = await axios.post(graphqlUrl, {
@@ -990,7 +990,7 @@ function createProjectTestCases() {
     assert.equal(result.data.data.createProject.title, sampleProject.title);
     assert.equal(
       result.data.data.createProject.organization.label,
-      ORGANIZATION_LABELS.GIVETH,
+      ORGANIZATION_LABELS.giftomy,
     );
 
     // When creating project, listed is null by default
@@ -1054,7 +1054,7 @@ function createProjectTestCases() {
     assert.equal(result.data.data.createProject.title, sampleProject.title);
     assert.equal(
       result.data.data.createProject.organization.label,
-      ORGANIZATION_LABELS.GIVETH,
+      ORGANIZATION_LABELS.giftomy,
     );
 
     // When creating project, listed is null by default

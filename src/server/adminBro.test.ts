@@ -165,7 +165,7 @@ function createTokenTestCases() {
           name: 'DragonToken',
           networkId: 1,
           symbol: 'DRGT',
-          organizations: 'giveth,trace',
+          organizations: 'giftomy,trace',
         },
       },
       {
@@ -177,7 +177,7 @@ function createTokenTestCases() {
 
     const newToken = await Token.findOne({ address: DRGTTokenAddress });
     const organizations = await Organization.createQueryBuilder('organization')
-      .where(`organization.label = 'giveth' OR organization.label = 'trace'`)
+      .where(`organization.label = 'giftomy' OR organization.label = 'trace'`)
       .getMany();
     assert.isOk(newToken);
     assert.isTrue(newToken!.organizations.length === organizations.length);
@@ -195,7 +195,7 @@ function createTokenTestCases() {
           name: 'DragonToken',
           networkId: 1,
           symbol: 'DRGT',
-          organizations: 'giveth,trace',
+          organizations: 'giftomy,trace',
         },
       },
       {

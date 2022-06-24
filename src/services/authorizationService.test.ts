@@ -16,14 +16,14 @@ describe('authorizationHandler() test cases', authorizationHandlerTestCases);
 const siwe = require('siwe');
 
 const domain = 'localhost';
-const origin = 'https://serve.giveth.io';
+const origin = 'https://serve.giftomy.io';
 
 function authorizationHandlerTestCases() {
   it('should decode user jwt with current impact graph authorization', async () => {
     const userData = {
       firstName: 'firstName',
       lastName: 'lastName',
-      email: `${new Date().getTime()}-giveth@giveth.com`,
+      email: `${new Date().getTime()}-giftomy@giftomy.xyz`,
       url: 'website url',
       loginType: 'wallet',
       walletAddress: generateRandomEtheriumAddress(),
@@ -39,7 +39,7 @@ function authorizationHandlerTestCases() {
     const userData = {
       firstName: 'firstName',
       lastName: 'lastName',
-      email: `${new Date().getTime()}-giveth@giveth.com`,
+      email: `${new Date().getTime()}-giftomy@giftomy.xyz`,
       url: 'website url',
       loginType: 'wallet',
       walletAddress: publicKey,

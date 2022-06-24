@@ -329,7 +329,7 @@ function syncDonationStatusWithBlockchainNetworkTestCases() {
 }
 
 function isProjectAcceptTokenTestCases() {
-  it('should return true for giveth projects accepting GIV on xdai', async () => {
+  it('should return true for giftomy projects accepting GIV on xdai', async () => {
     const token = await Token.findOne({
       symbol: 'GIV',
       networkId: NETWORK_IDS.XDAI,
@@ -341,7 +341,7 @@ function isProjectAcceptTokenTestCases() {
     });
     assert.isTrue(result);
   });
-  it('should return true for giveth projects accepting GIV on mainnet', async () => {
+  it('should return true for giftomy projects accepting GIV on mainnet', async () => {
     const token = await Token.findOne({
       symbol: 'GIV',
       networkId: NETWORK_IDS.MAIN_NET,
@@ -353,7 +353,7 @@ function isProjectAcceptTokenTestCases() {
     });
     assert.isTrue(result);
   });
-  it('should return true for giveth projects accepting WETH on xdai', async () => {
+  it('should return true for giftomy projects accepting WETH on xdai', async () => {
     const token = await Token.findOne({
       symbol: 'WETH',
       networkId: NETWORK_IDS.XDAI,

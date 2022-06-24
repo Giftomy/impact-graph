@@ -50,6 +50,7 @@ export class Organization extends BaseEntity {
 }
 
 export const ORGANIZATION_LABELS = {
+  GIFTOMY: 'giftomy',
   GIVETH: 'giveth',
   TRACE: 'trace',
   CHANGE: 'change',

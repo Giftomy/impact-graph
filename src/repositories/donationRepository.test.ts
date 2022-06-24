@@ -17,7 +17,7 @@ import {
 
 describe('createDonation test cases', () => {
   it('should create donation ', async () => {
-    const email = `${new Date().getTime()}@giveth.io`;
+    const email = `${new Date().getTime()}@giftomy.xyz`;
     const user = await User.create({
       email,
       role: UserRole.ADMIN,

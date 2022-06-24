@@ -10,7 +10,7 @@ const Queue = require('bull');
 
 const TWO_MINUTES = 1000 * 60 * 2;
 
-// There is shared redis between giveth.io and trace.giveth.io notify each other about verifiedCampaigns/project update
+// There is shared redis between giftomy.xyz and trace.giftomy.xyz notify each other about verifiedCampaigns/project update
 const redisConfig: RedisOptions = {
   host: process.env.SHARED_REDIS_HOST,
   port: Number(process.env.SHARED_REDIS_PORT),
@@ -107,7 +107,7 @@ export const initHandlingTraceCampaignUpdateEvents = () => {
         status === 'Active' &&
         project.status.id === ProjStatus.cancelled
       ) {
-        // Maybe project status is deactive in giveth.io, so we should not
+        // Maybe project status is deactive in giftomy.xyz, so we should not
         // change to active in this case, we just change the cancel status to active with this endpoint
         statusId = ProjStatus.active;
       }

@@ -1,11 +1,12 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 import { ORGANIZATION_LABELS } from '../src/entities/organization';
 
-const { GIVETH, GIVING_BLOCK, TRACE, CHANGE } = ORGANIZATION_LABELS;
+const { GIFTOMY, GIVETH, GIVING_BLOCK, TRACE, CHANGE } = ORGANIZATION_LABELS;
 
 export class seedOrganizations1646305490859 implements MigrationInterface {
   async up(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.query(`INSERT INTO organization (label,name,website) VALUES 
+    await queryRunner.query(`INSERT INTO organization (label,name,website) VALUES
+         ('${GIFTOMY}','GIFTOMY','https://giftomy.xyz'),
          ('${GIVETH}','Giveth','https://giveth.io'),
          ('${TRACE}','Trace','https://trace.giveth.io'),
          ('${GIVING_BLOCK}','Giving Block','https://thegivingblock.com'),
