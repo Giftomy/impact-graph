@@ -28,7 +28,7 @@ and put these to your `development.env`
 
 ```
 TYPEORM_DATABASE_TYPE=postgres
-TYPEORM_DATABASE_NAME=givethio
+TYPEORM_DATABASE_NAME=giftomy
 TYPEORM_DATABASE_USER=postgres
 TYPEORM_DATABASE_PASSWORD=postgres
 TYPEORM_DATABASE_HOST=localhost
