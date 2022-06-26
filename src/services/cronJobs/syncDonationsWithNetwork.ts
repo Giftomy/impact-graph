@@ -14,12 +14,12 @@ const verifyDonationsQueue = new Bull('verify-donations-queue', {
   redis: redisConfig,
 });
 const TWO_MINUTES = 1000 * 60 * 2;
-setInterval(async () => {
-  const verifyDonationsQueueCount = await verifyDonationsQueue.count();
-  logger.debug(`Verify donations job queues count:`, {
-    verifyDonationsQueueCount,
-  });
-}, TWO_MINUTES);
+// setInterval(async () => {
+//   const verifyDonationsQueueCount = await verifyDonationsQueue.count();
+//   logger.debug(`Verify donations job queues count:`, {
+//     verifyDonationsQueueCount,
+//   });
+// }, TWO_MINUTES);
 
 // As etherscan free plan support 5 request per second I think it's better the concurrent jobs should not be
 // more than 5 with free plan https://etherscan.io/apis

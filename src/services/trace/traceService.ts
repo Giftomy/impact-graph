@@ -22,7 +22,7 @@ if (process.env.SHARED_REDIS_PASSWORD) {
 const updateCampaignQueue = new Queue('trace-campaign-updated', {
   redis: redisConfig,
 });
-const updateGivethIoProjectQueue = new Queue('givethio-project-updated', {
+const updateGivethIoProjectQueue = new Queue('giftomy-project-updated', {
   redis: redisConfig,
 });
 
@@ -33,15 +33,15 @@ updateGivethIoProjectQueue.on('error', err => {
   logger.error('updateGivethIoProjectQueue connection error', err);
 });
 
-setInterval(async () => {
-  const updateCampaignQueueCount = await updateCampaignQueue.count();
-  const updateGivethIoProjectQueueCount =
-    await updateGivethIoProjectQueue.count();
-  logger.info(`Sync trace and givethio job queues count:`, {
-    updateCampaignQueueCount,
-    updateGivethIoProjectQueueCount,
-  });
-}, TWO_MINUTES);
+// setInterval(async () => {
+//   const updateCampaignQueueCount = await updateCampaignQueue.count();
+//   const updateGivethIoProjectQueueCount =
+//     await updateGivethIoProjectQueue.count();
+//   logger.info(`Sync trace and giftomy job queues count:`, {
+//     updateCampaignQueueCount,
+//     updateGivethIoProjectQueueCount,
+//   });
+// }, TWO_MINUTES);
 
 export interface UpdateCampaignData {
   title: string;
